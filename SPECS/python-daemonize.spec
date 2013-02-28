@@ -37,7 +37,7 @@ from daemonize.sourceforge.net. It is distributed under MIT license.
 %files
 %defattr(-,root,root,-)
 %doc README.md LICENSE
-%{python_sitelib}/%{name}*
+%{python_sitelib}/%{srcname}*
 
 %changelog
 * Thu Feb 28 2013 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 2.1.1-1.vortex
