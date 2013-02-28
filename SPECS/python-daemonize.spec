@@ -15,6 +15,7 @@ Source0:        http://pypi.python.org/packages/source/p/pip/%{srcname}-%{versio
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildArch:      noarch
+BuildRequires:  python-setuptools
 
 %description
 daemonize is a library for writing system daemons in Python. It has some bits
