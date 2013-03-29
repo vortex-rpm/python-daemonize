@@ -4,7 +4,7 @@
 
 Name:           python-%{srcname}
 Version:        2.2
-Release:        1.vortex%{?dist}
+Release:        2.vortex%{?dist}
 Summary:        Library to enable your code run as a daemon process on Unix-like systems
 Vendor:         Vortex RPM
 
@@ -15,7 +15,7 @@ Source0:        http://pypi.python.org/packages/source/p/pip/%{srcname}-%{versio
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildArch:      noarch
-BuildRequires:  python-setuptools
+BuildRequires:  python-setuptools, python-devel, python-pip, python-nose, python-virtualenv
 
 %description
 daemonize is a library for writing system daemons in Python. It has some bits
@@ -34,12 +34,23 @@ from daemonize.sourceforge.net. It is distributed under MIT license.
 %clean
 %{__rm} -rf %{buildroot}
 
+%check
+virtualenv env
+source env/bin/activate
+%{__pip} install .
+nosetests
+deactivate
+rm -rf env
+
 %files
 %defattr(-,root,root,-)
 %doc README.md LICENSE
 %{python_sitelib}/%{srcname}*
 
 %changelog
+* Sat Mar 30 2013 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 2.2-2.vortex
+- Add tests.
+
 * Sat Mar 30 2013 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 2.2-1.vortex
 - Update to 2.2.
 
