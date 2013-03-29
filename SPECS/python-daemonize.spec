@@ -3,7 +3,7 @@
 %global srcname daemonize
 
 Name:           python-%{srcname}
-Version:        2.1.1
+Version:        2.2
 Release:        1.vortex%{?dist}
 Summary:        Library to enable your code run as a daemon process on Unix-like systems
 Vendor:         Vortex RPM
@@ -40,6 +40,9 @@ from daemonize.sourceforge.net. It is distributed under MIT license.
 %{python_sitelib}/%{srcname}*
 
 %changelog
+* Sat Mar 30 2013 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 2.2-1.vortex
+- Update to 2.2.
+
 * Thu Feb 28 2013 Ilya Otyutskiy <ilya.otyutskiy@icloud.com> - 2.1.1-1.vortex
 - Initial packaging.
 
