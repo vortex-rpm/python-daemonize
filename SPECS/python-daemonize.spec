@@ -1,6 +1,7 @@
 %{!?python_sitelib: %global python_sitelib %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib()")}
 
 %global srcname daemonize
+%global __pip pip-python
 
 Name:           python-%{srcname}
 Version:        2.2
