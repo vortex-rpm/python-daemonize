@@ -38,8 +38,7 @@ from daemonize.sourceforge.net. It is distributed under MIT license.
 %check
 virtualenv env
 source env/bin/activate
-%{__pip} install .
-nosetests
+env PYTHONPATH=.:$PYTHONPATH nosetests
 deactivate
 rm -rf env
 
